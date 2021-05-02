@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CLIENT INFO</title>
+    </head>
+    <header>
+        <h1>Our client list</h1>
+    </header>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>AGE</th>
+                    <th>DOB</th>
+                    <th>ITEM ID</th>
+                    <th>OPERATION</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for client in clients %}
+                <tr>
+                    <td>{{client.client_id}}</td>
+                    <td>{{client.client_name}}</td>
+                    <td>{{client.client_age}}</td>
+                    <td>{{client.client_dob}}</td>
+                    <td>{{client.item_id}}</td>
+                    <td>   
+                        <form method="POST" action="./updateClient">
+                            <input type="hidden" value="{{client.client_name}}" name="oldClientName">
+                            <input type="text" value="{{client.client_name}}" name="newClientName">
+                            <input type="hidden" value="{{client.client_age}}" name="oldClientAge">
+                            <input type="text" value="{{client.client_age}}" name="newClientAge">
+                            <input type="hidden" value="{{client.client_dob}}" name="oldClientDob">
+                            <input type="text" value="{{client.client_dob}}" name="newClientDob">
+                            <input type="hidden" value="{{client.item_id}}" name="oldClientId">
+                            <input type="text" value="{{client.item_id}}" name="newClientId">
+                            <input type="submit" value="Update">
+                        </form>
+                        <form method="POST" action="./deleteClient">
+                            <input type="hidden" value="{{client.client_name}}" name="client_name">
+                            <input type="submit" value="Delete">
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>        
+    </body>
+    <footer style="background-color: black;">
+        <h5 style="color: cornsilk;">Made by Ankita Kashyap, Kavisha Mehta, Mann Bajpai and Shubham Tripathi</h5>
+    </footer>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>INVENTORY MANAGEMENT</title>
+        <meta charset="utf-8">
+    </head>
+    <header style="background-color: brown;">
+        <h1 style="color: cornsilk;">WELCOME TO INVENTORY MANAGEMENT SYSTEM</h1>
+    </header>
+    <body>
+        <br>
+        <a href="{{ url_for('displayInventory') }}">Visit the inventory</a>
+        <br>
+        <a href="{{ url_for('displayClients') }}">Check our clients</a>
+        <br>
+        <a href="{{ url_for('sold') }}">Buy items from our inventory</a>
+    </body>
+    <footer style="background-color: black;">
+        <h5 style="color: cornsilk;">Made by Ankita Kashyap, Kavisha Mehta, Mann Bajpai and Shubham Tripathi</h5>
+    </footer>
+</html>

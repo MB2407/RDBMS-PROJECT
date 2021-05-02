@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>INVENTORY INFO</title>
+    </head>
+    <header>
+        <h1>THE ITEMS ARE AS FOLLOWS:-</h1>
+    </header>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>PRICE</th>
+                    <th>CAPACITY</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                <tr>
+                    <td>{{item.item_id}}</td>
+                    <td>{{item.item_name}}</td>
+                    <td>{{item.item_price}}</td>
+                    <td>{{item.item_capacity}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>

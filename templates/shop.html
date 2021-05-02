@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SHOP @ INVENTORY</title>
+    </head>
+    <header>
+        <h1>ENTER THE ITEM(S) YOU WISH TO BUY FROM OUR INVENTORY</h1>
+    </header>
+    <body>
+        <form  method="POST" action="./insertSold">
+            <input type="number"  id="sold_id" name="sold_id" placeholder="Sold ID">
+            <br>
+            <input type="text"  id="sold_date" name="sold_date">
+            <br>
+            <input type="number"  id="sold_capacity" name="sold_capacity" placeholder="How many units?">
+            <br>
+            <input type="number"  id="item_id" name="item_id" placeholder="Item ID">
+            <br>
+            <input type="submit" value="Submit"> 
+        </form>
+        <br>
+        <br>
+        <div style="background-color: cornflowerblue; color: cornsilk;">SHOP CART</div>
+        <br>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th>BARCODE</th>
+                    <th>DATE</th>
+                    <th>UNITS</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in sold %}
+                <tr>
+                    <td>{{i.sold_id}}</td>
+                    <td>{{i.sold_date}}</td>
+                    <td>{{i.sold_capacity}}</td>
+                </tr>
+                {%  endfor %}
+            </tbody>
+        </table>
+    </body>
+    <footer style="background-color: black;">
+        <h5 style="color: cornsilk;">Made by Ankita Kashyap, Kavisha Mehta, Mann Bajpai and Shubham Tripathi</h5>
+    </footer>
+</html>
