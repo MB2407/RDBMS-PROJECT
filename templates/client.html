@@ -2,10 +2,28 @@
 <html>
     <head>
         <title>CLIENT INFO</title>
+		<link rel ="stylesheet" href = "Client.css">
     </head>
+	
+	<nav>
+			<label class ="logo">Managister</label>
+				<ul>
+					<li><a href ="">HOME</a></li>
+					<li><a href ="{{ url_for('displayClients') }}">CLIENT</a></li>
+					<li><a href ="{{ url_for('sold') }}">SHOP</a></li>
+					<li><a href ="{{ url_for('displayInventory') }}">STORE</a></li>
+				</ul>
+		</nav>
+
+<br>
+<br>
     <header>
-        <h1>Our client list</h1>
+
+        <h1>CLIENT LIST</h1>
     </header>
+	<body style =" background-image: linear-gradient(to right, #00d2ff,#3a7bd5);">
+	<br><br>
+		
     <body>
         <table>
             <thead>
@@ -28,15 +46,23 @@
                     <td>{{client.item_id}}</td>
                     <td>   
                         <form method="POST" action="./updateClient">
-                            <input type="hidden" value="{{client.client_name}}" name="oldClientName">
-                            <input type="text" value="{{client.client_name}}" name="newClientName">
-                            <input type="hidden" value="{{client.client_age}}" name="oldClientAge">
-                            <input type="text" value="{{client.client_age}}" name="newClientAge">
-                            <input type="hidden" value="{{client.client_dob}}" name="oldClientDob">
-                            <input type="text" value="{{client.client_dob}}" name="newClientDob">
-                            <input type="hidden" value="{{client.item_id}}" name="oldClientId">
-                            <input type="text" value="{{client.item_id}}" name="newClientId">
-                            <input type="submit" value="Update">
+                            <input class ="textbox1" type="hidden" value="{{client.client_name}}" name="oldClientName">
+							<br><br>
+                            <input class ="textbox1" type="text" value="{{client.client_name}}" name="newClientName">
+							<br><br>
+                            <input class ="textbox1" type="hidden" value="{{client.client_age}}" name="oldClientAge">
+                            <br><br>
+							<input class ="textbox1" type="text" value="{{client.client_age}}" name="newClientAge">
+                            <br><br>
+							<input class ="textbox1" type="hidden" value="{{client.client_dob}}" name="oldClientDob">
+                            <br><br>
+							<input class ="textbox1" type="text" value="{{client.client_dob}}" name="newClientDob">
+                            <br><br>
+							<input class ="textbox1" type="hidden" value="{{client.item_id}}" name="oldClientId">
+                            <br><br>
+							<input class ="textbox1" type="text" value="{{client.item_id}}" name="newClientId">
+                            <br><br>
+							<input class ="textbox1" type="submit" value="Update">
                         </form>
                         <form method="POST" action="./deleteClient">
                             <input type="hidden" value="{{client.client_name}}" name="client_name">
@@ -48,7 +74,13 @@
             </tbody>
         </table>        
     </body>
-    <footer style="background-color: black;">
-        <h5 style="color: cornsilk;">Made by Ankita Kashyap, Kavisha Mehta, Mann Bajpai and Shubham Tripathi</h5>
-    </footer>
+	<br>
+	<hr>
+	<br>
+	<hr>
+    			<div class ="footer"> 
+					
+					<p>Made by Ankita Kashyap, Kavisha Mehta, Mann Bajpai and Shubham Tripathi</p>
+					
+			</div>
 </html>
